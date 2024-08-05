@@ -1,0 +1,124 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  overflow: hidden; /* Prevent horizontal scroll */
+}
+
+.text-container {
+  width: 90%; /* Adjusted for mobile view */
+  max-width: 100%; /* Ensure it fits within the viewport */
+  text-align: center;
+}
+
+.line {
+  display: block;
+  white-space: nowrap; /* Prevent wrapping of text */
+  overflow: hidden; /* Hide text overflow */
+  border-right: 3px solid #333; /* Cursor effect */
+  font-size: 0.75rem;
+  line-height: 1.4;
+  opacity: 0; /* Hide text initially */
+  animation: fade-in 0.5s ease-out forwards, typing 5s steps(40, end) forwards,
+    blink-caret 0.75s step-end infinite;
+}
+
+.line-1 {
+  color: #1c3d5a; /* Dark Blue for calmness and professionalism */
+  animation: fade-in 0.5s ease-out forwards,
+    typing 5s steps(40, end) 0.5s forwards,
+    blink-caret 0.75s step-end 5s forwards;
+}
+
+.line-2 {
+  color: #b35900; /* Dark Orange for creativity and encouragement */
+  opacity: 0; /* Hide until it's time to show */
+  animation: fade-in 0.5s ease-out 5.5s forwards,
+    typing 5s steps(40, end) 6s forwards,
+    blink-caret 0.75s step-end 11s forwards;
+}
+
+.line-3 {
+  color: #b39800; /* Dark Gold for success and achievement */
+  opacity: 0; /* Hide until it's time to show */
+  animation: fade-in 0.5s ease-out 11.5s forwards,
+    typing 5s steps(40, end) 12s forwards,
+    blink-caret 0.75s step-end 17s forwards;
+}
+
+.line-4 {
+  color: #006d77; /* Dark Teal for communication and connection */
+  opacity: 0; /* Hide until it's time to show */
+  animation: fade-in 0.5s ease-out 17.5s forwards,
+    typing 5s steps(40, end) 18s forwards,
+    blink-caret 0.75s step-end 23s forwards;
+}
+
+.heart {
+  font-size: 1rem;
+  opacity: 0;
+  animation: fade-in 0.5s ease-out 23s forwards, pulse 1.5s infinite 23.5s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    color: #d10000; /* Dark Red for a strong, vibrant effect */
+  }
+  50% {
+    transform: scale(1.2); /* Larger pulse effect */
+    color: #ff4c4c; /* Lighter Red for a more energetic feel */
+  }
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 600px) {
+  .line {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  .heart {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-container {
+    width: 80%;
+  }
+}
